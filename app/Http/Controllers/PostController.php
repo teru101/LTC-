@@ -9,8 +9,13 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
-        return view('posts.index')->with(['posts' => $post->getPaginateByLimit(1)]);
-       //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
+ dev_basis03
+        return view ('posts.index')->with(['posts' => $post->getPaginateByLimit(1)]);
+    }
+    
+    public function show(Post $post)
+    {
+        dd($post);
     }
 }
 ?>

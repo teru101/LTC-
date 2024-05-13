@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+dev_basis03
+    
+    public function getPaginateByLimit(int $limit_count = 5)
+    {
+        return $this->orderby('updated_at', 'DESC')->paginate($limit_count);
+    }
+}
+
 
     public function getPaginateByLimit(int $limit_count = 5)
     {
@@ -15,3 +23,4 @@ class Post extends Model
         // updated_atで降順に並べたあと、limitで件数制限をかける
     }
 }
+
