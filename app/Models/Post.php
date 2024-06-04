@@ -9,12 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Post extends Model
 {
     use HasFactory;
+ dev_basis05
     use SoftDeletes;
     
     protected $fillable = [
     'title',
     'body',
     ];
+
     
     public function getPaginateByLimit(int $limit_count = 5)
     {

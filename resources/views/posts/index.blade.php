@@ -6,13 +6,15 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
+    <body class="antialiased">
         <h1>Blog Name</h1>
+dev_basis05
         <a href='/posts/create'>create</a>
+
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>{{ $post->title }}</h2>
+                    <a href="/posts/{{$post->id}}"><h2 class='title'>{{ $post->title }}</h2></a>
                     <p class='body'>{{ $post->body }}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
@@ -25,6 +27,7 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+ dev_basis05
         <script>
             function deletePost(id) {
                 'use strict'
@@ -34,5 +37,6 @@
                 }
             }
         </script>
+
     </body>
 </html>
